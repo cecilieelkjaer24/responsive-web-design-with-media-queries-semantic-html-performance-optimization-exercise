@@ -172,21 +172,26 @@ footer {
     }
 
     main {
-        display: flex;
-        justify-content: center; /* Centrere indholdet */
-        align-items: flex-start; /* Justerer indholdet til toppen af containeren */
-        flex-direction: row; /* Laver en horisontal layout */
-        flex-wrap: wrap; /* Tillader elementer at wrappe, når der ikke er plads */
-        line-height: 2rem; /* Linjeafstand */
-        margin: 1.5rem auto; /* Justerer marginen for at centrere main */
-        padding: 0 20px; /* Tilføjer indvendige marginer for at give luft på siderne */
-        max-width: 80%; /* Giver fuld bredde til main */
-    }
+       display: flex;
+       flex-direction: column;
+       flex-wrap:wrap;
+       justify-content: center;
+       align-items: center;
+        gap: 10px; /* Mellemrum mellem kolonner */
+        width: 50%; /* Sørger for, at grid bruger hele bredden */
+        padding: 10px;
+      }
+      
+     .
+     }
+      
+      #trump, #dumper, #designskole {
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     
-    /* For at sikre, at alle artikler i main er ensartede */
-    article {
-        flex: 1 1 calc(30% - 1rem); /* Gør artiklerne fleksible og tilpasser bredden */
-        margin: 0.5rem; /* Giver margin omkring artiklerne */
-        min-width: 200px; /* Sætter minimumsbredden for artiklerne */
-    }
+      }
+      
+    
+
 }
