@@ -152,12 +152,9 @@ footer {
 /* Desktop og større skærme */
 @media (min-width: 1100px) {
     #wrapper {
-        width: 100%; /* Sætter bredden til 100% for at udnytte fuld skærm */
+        width: 50%; /* Sætter bredden til 100% for at udnytte fuld skærm */
     }
 
-    .flex-container {
-        justify-content: center;
-    }
 
     #navigation-desktop li a {
         font-size: 1.5rem;
@@ -167,31 +164,28 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        
         flex-direction: row;
         flex-wrap: nowrap;
     }
-
     main {
-       display: flex;
-       flex-direction: column;
-       flex-wrap:wrap;
-       justify-content: center;
-       align-items: center;
-        gap: 10px; /* Mellemrum mellem kolonner */
-        width: 50%; /* Sørger for, at grid bruger hele bredden */
-        padding: 10px;
-      }
-      
-     .
-     }
-      
-      #trump, #dumper, #designskole {
-        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    article {
+        flex: 1 1 calc(33.333% - 40px); /* Tredjedel af bredden med plads til mellemrum */
+        max-width: calc(33.333% - 40px);
+        background-color: #f9f9f9;
+        padding: 20px;
         border: 1px solid #ccc;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+    }
     
-      }
-      
-    
-
 }
