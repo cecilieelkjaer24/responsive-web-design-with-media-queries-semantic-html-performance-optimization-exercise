@@ -10,7 +10,7 @@
 body {
     font: 12px/1.8 'Raleway', sans-serif; /* Øger line-height */
     background-color: #f8f8f8;
-    text-align: center; /* Centrerer alt indhold som standard */
+    text-align: start; /* Centrerer alt indhold som standard */
 }
 
 #wrapper {
@@ -21,19 +21,6 @@ body {
 }
 
 /* Typografi */
-h1, h2, h3, h4, h6, p {
-    font-family: 'Lora', serif;
-    line-height: 1.6; /* Forbedret line-height */
-    text-align: center; /* Centrerer alle overskrifter og paragraffer */
-    margin: 0.5em 0; /* Tilføjer lidt margin mellem elementer for bedre luft */
-}
-
-h1 {
-    font-size: 4rem;
-    border-bottom: ridge;
-    font-weight: bold;
-    padding-bottom: 0.5em;
-}
 
 h2 {
     font-size: 2.5rem;
@@ -42,10 +29,42 @@ h2 {
 
 p {
     font-family: 'Raleway', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
 }
 
-/* Header */
+.altcontent {
+    line-height: 1.5rem;
+    text-decoration: none;
+
+    margin: 5% 5% 5% 5%;
+    text-wrap: wrap;
+    justify-content: flex-end;
+    text-align:right;
+}
+
+.altcontent h2, h3, h4, h6, p {
+    font-family: 'Lora', serif;
+    line-height: 1.6; /* Forbedret line-height */
+    text-align: center; /* Centrerer alle overskrifter og paragraffer */
+    margin: 0.5em 0; /* Tilføjer lidt margin mellem elementer for bedre luft */
+    margin: 5% 5% 5% 5%;
+    font-weight: bold;
+}
+
+.altcontent h1 {
+    font-family: 'Lora', serif;
+    line-height: 1.6; /* Forbedret line-height */
+    text-align: center; /* Centrerer alle overskrifter og paragraffer */
+    margin: 0.5em 0; /* Tilføjer lidt margin mellem elementer for bedre luft */
+    margin: 5% 5% 5% 5%;
+    font-size: 2rem;
+}
+
+
+
+
 header {
     background-color: white;
     padding: 1em;
@@ -53,7 +72,7 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-/* Navigation */
+
 #navigation-icon {
     float: none; /* Fjernet float for centrering */
     margin: 0 auto;
@@ -68,60 +87,85 @@ header {
 }
 
 /* Flex container til responsivitet */
-.flex-container {
+article {
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
     justify-content: center; /* Centrerer alle elementer i flex-container */
+    margin-top: 2rem;
 }
 
-/* Billeder */
+
 img {
     width: 100%;
     height: auto;
     margin: 0 auto;
 }
 
-/* Footer */
+
 footer {
     background-color: black;
     color: white;
     padding: 2%;
     border-top: 1px ridge white;
+    justify-content: center;
 }
 
-/* Responsive opsætning */
 
-/* Mobile (default) */
+
 #navigation-desktop {
     display: none;
 }
 
 #navigation-mobile li {
-    padding: 1em;
+    padding: 1rem;
     border-bottom: 1px solid #ccc;
+   
 }
 
-/* Små tablets og op */
+
 @media (min-width: 500px) {
-    #wrapper {
-        padding: 5%;
+   
+  
+
+    #navigation-desktop ul li {
+        display: grid;
+        grid-row: auto;
+       justify-content: center;
+       align-items: center;
+      
+
     }
 
-    header {
-        padding: 1% 2%;
+    .altcontent {
+        line-height: 2rem;
+        text-decoration: none;
+        margin: 5% 5% 5% 5%;
+        text-wrap: wrap;
+       
     }
 
-    .flex-container {
-        gap: 1.5%;
+    .altcontent p {
+        text-align: left;
+
     }
+
+   
 
     #logo2 {
         max-width: 60px;
     }
+
+   .footer-links {
+    display: flex;
+    justify-self: center;
+    align-items: center;   
+
+    
+}
 }
 
-/* Tablets og op */
+
 @media (min-width: 700px) {
     #navigation-icon {
         display: none;
@@ -129,7 +173,8 @@ footer {
 
     #navigation-desktop {
         display: flex;
-        justify-content: center; /* Centrerer desktop-navigationen */
+        justify-content: center; 
+        
     }
 
     #navigation-desktop li {
@@ -147,44 +192,61 @@ footer {
     #navigation-desktop li a:hover {
         text-decoration: underline;
     }
+
+  
+
+   
 }
 
 /* Desktop og større skærme */
 @media (min-width: 1100px) {
-    #wrapper {
-        width: 50%; /* Sætter bredden til 100% for at udnytte fuld skærm */
-    }
 
 
-    #navigation-desktop li a {
-        font-size: 1.5rem;
-    }
-    ol, ul {
-        list-style: none;
+    .navigations-desktop {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
     }
-    main {
+
+    #navigation-desktop li a:hover {
+        text-decoration: underline;
+    }
+
+    .altcontent {
+        line-height: 2rem;
         display: flex;
+        flex-direction: column 3;
         flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
+        justify-content: space-around;
+        width: 83%;
+        margin-left: 8rem;
+        margin-top: 1rem;
+       
     }
+
+    .altcontent p {
+        text-align: left;
+
+    }
+
     
+
     article {
         flex: 1 1 calc(33.333% - 40px); /* Tredjedel af bredden med plads til mellemrum */
         max-width: calc(33.333% - 40px);
-        background-color: #f9f9f9;
-        padding: 20px;
-        border: 1px solid #ccc;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
     }
+
+    #logo2 {
+        max-width: 60px;
+    }
+
+   .footer-links {
+    display: flex;
+    justify-self: center;
+    align-items: center;   
+    }
+  
+  
     
 }
